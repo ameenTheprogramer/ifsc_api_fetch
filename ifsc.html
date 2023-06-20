@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ifsc</title>
+</head>
+
+<body>
+
+    <div>
+        <label for="">Enter ifsc</label>
+        <input id="ifsc" type="text">
+        <button onclick=getIfsc()>Search</button>
+    </div>
+
+    <div>
+        <h5>BRANCH : <span id="BRANCH"></span></h5>
+        <h5>CONTACT : <span id="CONTACT"></span></h5>
+        <h5>CITY : <span id="CITY"></span></h5>
+
+
+    </div>
+
+    <script>
+        let api = "https://ifsc.razorpay.com/"
+        function getIfsc() {
+            let ifsc = document.getElementById("ifsc").value
+            console.log(ifsc);
+
+            fetch(api + ifsc)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    document.getElementById("BRANCH").innerText = data["BRANCH"]
+                    document.getElementById("CONTACT").innerText = data["CONTACT"]
+                    document.getElementById("CITY").innerText = data["CITY"]
+                })
+                .catch((err) => {
+                    console.log(data);
+                })
+        }
+
+        fetchText();
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="input">
+        <input type="submit" id="submit" onclick="f1()">
+        <p>Bank :<p class="one" id="a1"></p></p>
+        <p>address : <p class="one" id="a2"></p></p>
+        <p>bankcode : <p class="one" id="a3"></p></p>
+        <p>branch : <p class="one" id="a4"></p></p>
+        <p>center : <p class="one" id="a5"></p></p>
+        <p>city : <p class="one" id="a6"></p></p>
+        <p>contact : <p class="one" id="a7"></p></p>
+        <p>district : <p class="one" id="a8"></p></p>
+        <p>ifsc : <p class="one" id="a9"></p></p>
+        <p>micr : <p class="one" id="a10"></p></p>
+        <p>sate : <p class="one" id="a11"></p></p>
+
+        </div>
+    </div>
+    <style>
+        .one{
+            color: rgb(13, 255, 0);
+        }
+        p{
+            color: rgb(0, 0, 0);
+        }
+    
+    </style>
+</body>
+<script>
+    let submit = document.getElementById("input")
+    submit.addEventListener("keydown", function(e) {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+        f1();
+    
+    }
+    })
+
+</script>
+</html>
